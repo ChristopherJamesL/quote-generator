@@ -12,7 +12,7 @@ const newQuote = () => {
     const newQuote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
     
     // Check if author field is blank and replace it with 'Unknown'
-    if (!quoteContainer.author) {
+    if (!newQuote.author) {
         authorText.textContent = 'Unknown';
     } else {
         authorText.textContent = newQuote.author;
@@ -24,7 +24,7 @@ const newQuote = () => {
     } else {
         quoteText.classList.remove('long-quote');
     }
-    quoteText.textContent = newQuote.text;
+    return quoteText.textContent = newQuote.text;
 }
 
 // Get Quotes From API
